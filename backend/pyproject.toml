@@ -1,0 +1,29 @@
+[project]
+name = "commerce-memory-backend"
+version = "0.1.0"
+description = "Memory-first commerce assistant API"
+requires-python = ">=3.12"
+dependencies = [
+  "alembic>=1.14",
+  "fastapi>=0.118",
+  "openai>=2.8",
+  "psycopg[binary]>=3.2",
+  "pydantic>=2.10",
+  "sqlalchemy>=2.0",
+  "uvicorn[standard]>=0.34",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28",
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
